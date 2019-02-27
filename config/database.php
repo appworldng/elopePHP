@@ -34,6 +34,19 @@ class Database {
 	 */
     public static $connectionID;
     public static $connectionErrMsg;
+
+    /**
+	 * Constructor
+	 *
+	 * @since  1.0.0
+	 */
+    public function __construct() {
+        self::$localhost = '';
+        self::$username = '';
+        self::$password = '';
+        self::$database = '';
+        self::connect();
+    }
 }
 
 ?>
