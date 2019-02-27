@@ -23,7 +23,9 @@ class Model {
 	 * @var resource
 	 */
     protected static $connectionID;
+    protected $errorMessage;
     protected $className;
+    protected $record;
 
     /**
 	 * Constructor
@@ -33,6 +35,22 @@ class Model {
     public function __construct() {
         self::$connectionID = Database::$connectionID;
         $this->className = get_class();
+    }
+
+    /**
+	 * fetchAll() Method
+     * 
+	 * @access public
+	 * @since  1.0.0
+	 */
+     public function fetchAll() {
+        $sql = "SELECT * FROM ".$this->className;
+        $result = mysqli_query(self::$connectionID, $sql);
+        $record = mysqli_fetch_array($result, MYSQLI_ASSOC);
+        foreach($record as $key=>$value) {
+            $this->$key = $value;
+        }
+        return $this;
     }
    
     /**
@@ -47,9 +65,9 @@ class Model {
         $record = mysqli_fetch_array($result, MYSQLI_ASSOC);
         //Properties...
         foreach($record as $key=>$value) {
-            $this->$key = $value;
+            $this->record->$key = $value;
         }
-        return $this;
+        return $this->record;
     }
 
     /**
