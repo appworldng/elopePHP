@@ -5,13 +5,13 @@ A simple lightweight, fast-processing PHP framework that utilizes the MVC approa
 The elopePHP uses the active record pattern for object relational mapping of its records to model objects, making it easier for you to access the column values of your RDBMS without having to worry about the new columns or changes to the database schema.
 
 ### Models
-You can quickly create your own models by simply extending the parent **model** class. Your child model will able to utilize the already defined parent methods such as **fetchAll()**, **getRecord($id)**, **addRecord($args)**, **delRecord($id)**, **editRecord($id, $args)** :
+You can quickly create your own models by simply extending the parent **model** class. Your child model will able to utilize the already defined parent methods such as **fetchAll()**, **getRecord($id)**, **addRecord($args)**, **delRecord($id)**, **editRecord($id, $args)**:
 ```
-//For. e.g lets define a User Model
-class User extends Model {}
+//For. e.g lets define a Users Model based on a Users table
+class Users extends Model {}
 
 //Instantiate Object & access methods
-$users = new User();
+$users = new Users();
 $allUsers = $users->fetchAll();
 $specificUser = $users->getRecord(1);
 
@@ -26,4 +26,15 @@ foreach($allUsers as $specificUser) {
 echo $specificUser->ID.'<br/>';
 echo $specificuser->firstname.'<br/>';
 echo $specificuser->lastname.'<br/>';
+```
+
+### Views
+Create your own customizable view classes by simply extending the parent **view** class. Your child view will able to utilize the already defined parent methods such as **render()**, **renderTable()**, **renderHTML()**:
+```
+//Instantiate View
+class UsersView extends View {}
+
+//Instantiate Object & access methods
+$usersView = new UsersView();
+$usersView->renderHTML();
 ```
