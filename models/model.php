@@ -22,7 +22,8 @@ class Model {
 	 *
 	 * @var resource
 	 */
-    private $connectionID;
+    protected static $connectionID;
+    protected $className;
 
     /**
 	 * Constructor
@@ -30,7 +31,8 @@ class Model {
 	 * @since  1.0.0
 	 */
     public function __construct() {
-        $this->connectionID = Database::$connectionID;
+        self::$connectionID = Database::$connectionID;
+        $this->className = get_class();
     }
    
     /**
@@ -40,8 +42,8 @@ class Model {
 	 * @since  1.0.0
 	 */
     public function getRecord($id) {
-        $sql = "SELECT * FROM products WHERE id = $id";
-        $result = mysqli_query($this->connectionID, $sql);
+        $sql = "SELECT * FROM '.$this->className.' WHERE id = $id";
+        $result = mysqli_query(self::$connectionID, $sql);
         $record = mysqli_fetch_array($result, MYSQLI_ASSOC);
         //Properties...
         foreach($record as $key=>$value) {
