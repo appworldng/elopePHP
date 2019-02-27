@@ -81,7 +81,7 @@ class Model {
         }
         $columns = rtrim(trim($columns), ',');
         $sql = "INSERT INTO ".$this->className." SET ".$columns;
-        $result = mysqli_query($this->connectionID, $sql);
+        $result = mysqli_query(self::$connectionID, $sql);
     }
 
     /**
@@ -96,7 +96,7 @@ class Model {
         }
         $columns = rtrim(trim($columns), ',');
         $sql = "UPDATE ".$this->className." SET ".$columns." WHERE id = $id";
-        $result = mysqli_query($this->connectionID, $sql);
+        $result = mysqli_query(self::$connectionID, $sql);
     }
 
     /**
@@ -107,7 +107,7 @@ class Model {
 	 */
     public function delRecord($id) {
         $sql = "DELETE FROM ".$this->className." WHERE id = $id";
-        $result = mysqli_query($this->connectionID, $sql);
+        $result = mysqli_query(self::$connectionID, $sql);
     }
 }
 
