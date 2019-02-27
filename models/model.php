@@ -43,14 +43,17 @@ class Model {
 	 * @access public
 	 * @since  1.0.0
 	 */
-     public function fetchAll() {
+    public function fetchAll() {
         $sql = "SELECT * FROM ".$this->className;
         $result = mysqli_query(self::$connectionID, $sql);
-        $record = mysqli_fetch_array($result, MYSQLI_ASSOC);
-        foreach($record as $key=>$value) {
-            $this->$key = $value;
+        $records = mysqli_fetch_array($result, MYSQLI_ASSOC);
+        foreach($records as $record) {
+            foreach($record as $key=>$value) {
+                $this->record->$key = $value;
+            }
+            $allRecords[] = $this->record;
         }
-        return $this;
+        return $allRecords;
     }
    
     /**
