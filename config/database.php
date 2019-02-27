@@ -2,8 +2,8 @@
 
 /**
  * Filename:      database.php
- * Framework:     easyPHP
- * Framework URI: https://github.com/chigozieorunta/easyPHP
+ * Framework:     elopePHP
+ * Framework URI: https://github.com/chigozieorunta/elopePHP
  * Domain Path:   /config
  * Description:   The database class with a singleton pattern for instantiation
  * Author:        Chigozie Orunta
