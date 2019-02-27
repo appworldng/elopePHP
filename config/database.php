@@ -13,6 +13,8 @@
  * Last Change:   2019/02/27
  */
 
+Database::getInstance();
+
  /**
  * Class Database
  */
@@ -63,6 +65,18 @@ class Database {
                 self::$database
             )
         ) self::$connectionErrMsg = 'Unable to connect';
+    }
+
+    /**
+	 * Points the class, singleton.
+	 *
+	 * @access public
+	 * @since  1.0.0
+	 */
+    public static function getInstance() {
+        static $instance;
+        if($instance === null) $instance = new self();
+        return $instance;
     }
 }
 
