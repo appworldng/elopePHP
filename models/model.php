@@ -63,7 +63,6 @@ class Model {
         $sql = "SELECT * FROM ".$this->className." WHERE id = $id";
         $result = mysqli_query(self::$connectionID, $sql);
         $record = mysqli_fetch_array($result, MYSQLI_ASSOC);
-        //Properties...
         foreach($record as $key=>$value) {
             $this->record->$key = $value;
         }
