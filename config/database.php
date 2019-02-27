@@ -57,7 +57,7 @@ class Database {
 	 * @since  1.0.0
 	 */
     private static function connect() {
-        mysqli_connect(self::$localhost, self::$username, self::$password, self::$database);
+        self::$connectionID = mysqli_connect(self::$localhost, self::$username, self::$password, self::$database);
         if(mysqli_connect_errno()) {
             self::$connectionErrMsg = "Failed to connect to MySQL: ".mysqli_connect_error();
             die();
