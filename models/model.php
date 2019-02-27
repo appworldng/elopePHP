@@ -24,8 +24,30 @@ class Model {
 	 */
     private $connectionID;
 
+    /**
+	 * Constructor
+	 *
+	 * @since  1.0.0
+	 */
     public function __construct() {
         $this->connectionID = Database::$connectionID;
+    }
+   
+    /**
+	 * getRecord($id) Method
+     * 
+	 * @access public
+	 * @since  1.0.0
+	 */
+    public function getRecord($id) {
+        $sql = "SELECT * FROM products WHERE id = $id";
+        $result = mysqli_query($this->connectionID, $sql);
+        $record = mysqli_fetch_array($result, MYSQLI_ASSOC);
+        //Properties...
+        foreach($record as $key=>$value) {
+            $this->$key = $value;
+        }
+        return $this;
     }
 }
 
