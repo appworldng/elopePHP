@@ -60,9 +60,25 @@ class Model {
 	 */
     public function addRecord($args) {
         foreach($args as $key=>$value) {
-            $columns .= $key.' = '.$value;
+            $columns .= $key.' = '.$value.', ';
         }
+        $columns = rtrim(trim($columns), ',');
         $sql = "INSERT INTO ".$this->className." SET ".$columns;
+        $result = mysqli_query($this->connectionID, $sql);
+    }
+
+    /**
+	 * editRecord($id, $args) Method
+     * 
+	 * @access public
+	 * @since  1.0.0
+	 */
+    public function editRecord($id, $args) {
+        foreach($args as $key=>$value) {
+            $columns .= $key.' = '.$value.', ';
+        }
+        $columns = rtrim(trim($columns), ',');
+        $sql = "UPDATE ".$this->className." SET ".$columns." WHERE id = $id";
         $result = mysqli_query($this->connectionID, $sql);
     }
 
