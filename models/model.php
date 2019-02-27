@@ -59,7 +59,7 @@ class Model {
 	 * @since  1.0.0
 	 */
     public function delRecord($id) {
-        $sql = "DELETE FROM products WHERE id = $id";
+        $sql = "DELETE FROM '.$this->className.' WHERE id = $id";
         $result = mysqli_query($this->connectionID, $sql);
     }
 }
