@@ -7,16 +7,23 @@ The elopePHP uses the active record pattern for object relational mapping of its
 ### Models
 You can quickly create your own models by simply extending the parent **model** class. Your child model will able to utilize the already defined parent methods such as **fetchAll()**, **getRecord($id)**, **addRecord($args)**, **delRecord($id)**, **editRecord($id, $args)** :
 ```
-//Define Class
-class User extends Model {
-
-}
+//For. e.g lets define a User Model
+class User extends Model {}
 
 //Instantiate Object & access methods
 $users = new User();
 $allUsers = $users->fetchAll();
 $specificUser = $users->getRecord(1);
 
-//You can now display any column within your users table
-echo $specificUser->ID;
+//Output all Users
+foreach($allUsers as $specificUser) {
+    echo $specificUser->ID.'<br/>';
+    echo $specificUser->firstname.'<br/>';
+    echo $specificUser->lastname.'<br/>';
+}
+
+//Output specific User
+echo $specificUser->ID.'<br/>';
+echo $specificuser->firstname.'<br/>';
+echo $specificuser->lastname.'<br/>';
 ```
