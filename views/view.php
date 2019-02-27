@@ -16,6 +16,11 @@
 /**
  * Class View
  */
-class Model {
-
+class View {
+    /**
+	 * Constructor
+	 *
+	 * @since  1.0.0
+	 */
+    public function __construct() {}
 }
