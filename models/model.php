@@ -34,7 +34,7 @@ class Model {
 	 */
     public function __construct() {
         self::$connectionID = Database::$connectionID;
-        $this->className = get_class();
+        $this->className = get_class($this);
     }
 
     /**
