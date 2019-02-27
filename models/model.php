@@ -18,7 +18,7 @@
  */
 class Model {
     /**
-	 * Private variable
+	 * Protected Variables
 	 *
 	 * @var resource
 	 */
