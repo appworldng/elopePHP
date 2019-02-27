@@ -49,6 +49,17 @@ class Model {
         }
         return $this;
     }
+
+    /**
+	 * delRecord($id) Method
+     * 
+	 * @access public
+	 * @since  1.0.0
+	 */
+    public function delRecord($id) {
+        $sql = "DELETE FROM products WHERE id = $id";
+        $result = mysqli_query($this->connectionID, $sql);
+    }
 }
 
 ?>
