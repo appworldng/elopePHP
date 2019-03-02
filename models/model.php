@@ -46,12 +46,13 @@ class Model {
     public function fetchAll() {
         $sql = "SELECT * FROM ".$this->className;
         $result = mysqli_query(self::$connectionID, $sql);
-        $records = mysqli_fetch_array($result, MYSQLI_ASSOC);
+        $records = mysqli_fetch_all($result, MYSQLI_ASSOC);
         foreach($records as $record) {
+            $newObj = new self();
             foreach($record as $key=>$value) {
-                $this->record->$key = $value;
+                $newObj->$key = $value;
             }
-            $allRecords[] = $this->record;
+            $allRecords[] = $newObj;
         }
         return $allRecords;
     }
