@@ -113,6 +113,28 @@ class Model {
         $sql = "DELETE FROM ".$this->className." WHERE id = $id";
         $result = mysqli_query(self::$connectionID, $sql);
     }
+
+    /**
+     * query Method
+     * 
+     * @access public
+     * @since 1.0.0
+     */
+    public static function query($sql) {
+        $command = explode(" ", $sql);
+        $result = mysqli_query(self::$connectionID, $sql);
+        if($command[0] == "SELECT") {
+            $records = mysqli_fetch_all($result, MYSQLI_ASSOC);
+            foreach($records as $record) {
+                $newObj = new self();
+                foreach($record as $key=>$value) {
+                    $newObj->$key = $value;
+                }
+                $allRecords[] = $newObj;
+            }
+            return $allRecords;
+        }
+    }
 }
 
 ?>
