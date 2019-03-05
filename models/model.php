@@ -81,7 +81,7 @@ class Model {
 	 */
     public function addRecord($args) {
         foreach($args as $key=>$value) {
-            $columns .= $key.' = '.$value.', ';
+            $columns .= $key.' = '.mysqli_real_escape_string(self::$ConnectionID, $value).', ';
         }
         $columns = rtrim(trim($columns), ',');
         $sql = "INSERT INTO ".$this->className." SET ".$columns;
@@ -96,7 +96,7 @@ class Model {
 	 */
     public function editRecord($id, $args) {
         foreach($args as $key=>$value) {
-            $columns .= $key.' = '.$value.', ';
+            $columns .= $key.' = '.mysqli_real_escape_string(self::$ConnectionID, $value).', ';
         }
         $columns = rtrim(trim($columns), ',');
         $sql = "UPDATE ".$this->className." SET ".$columns." WHERE id = $id";
