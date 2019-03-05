@@ -1,0 +1,18 @@
+RewriteEngine On
+# turn on the mod_rewrite engine
+
+RewriteCond %{REQUEST_FILENAME}.php -f
+# IF the request filename with .php extension is a file which exists
+
+RewriteCond %{REQUEST_URI} !/$
+# AND the request is not for a directory
+
+RewriteRule ^([a-zA-Z0-9-]+)$ $1.php
+# redirect PHP page to the requested page...
+
+RewriteRule ^([a-zA-Z0-9-]+)$ index.php?controller=default&parameter=$1
+# RewriteRule ^product/([0-9]+)/([a-zA-Z0-9-]+)$ product.php?controller=product&parameter=$1
+# RewriteRule ^category/([a-zA-Z0-9-]+)$ category.php?controller=category&parameter=$1
+# RewriteRule ^(.*)/images/(.*)$ images/$2 [QSA,L]
+# RewriteRule ^(.*)/css/(.*)$ css/$2 [QSA,L]
+# RewriteRule ^(.*)/js/(.*)$ js/$2 [QSA,L]
