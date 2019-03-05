@@ -117,7 +117,7 @@ class Model {
     /**
      * query Method
      * 
-     * @access public
+     * @access public static
      * @since 1.0.0
      */
     public static function query($sql) {
