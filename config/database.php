@@ -60,7 +60,7 @@ class Database {
         self::$connectionID = mysqli_connect(self::$localhost, self::$username, self::$password, self::$database);
         if(mysqli_connect_errno()) {
             self::$connectionErrMsg = "Failed to connect to MySQL: ".mysqli_connect_error();
-            die();
+            die('Unable to Connect');
         }
     }
 
