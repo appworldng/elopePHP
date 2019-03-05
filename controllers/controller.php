@@ -32,6 +32,6 @@ class Controller {
 	 */
 	public function run() {
 		$model = $this->model;
-		View::renderHTML('template');
+		View::renderHTML('template.tpl');
 	}
 }
