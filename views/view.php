@@ -32,7 +32,9 @@ class View {
 	 * @access public
 	 * @since  1.0.0
 	 */
-    public function renderTable($id) {
-        
+    public function renderTable($objectArray) {
+        foreach($objectArray as $object) {
+			
+		}
     }
 }
