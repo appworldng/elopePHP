@@ -23,15 +23,4 @@ class Controller {
 	 * @since  1.0.0
 	 */
 	public function __construct() {}
-		
-	/**
-	 * Run Method
-	 * 
-	 * @access public
-	 * @since 1.0.0
-	 */
-	public function run() {
-		$model = $this->model;
-		View::renderHTML('template.tpl');
-	}
 }
