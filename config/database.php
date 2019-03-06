@@ -43,10 +43,10 @@ class Database {
 	 * @since  1.0.0
 	 */
     public function __construct() {
-        self::$localhost = '';
-        self::$username = '';
+        self::$localhost = 'localhost';
+        self::$username = 'root';
         self::$password = '';
-        self::$database = '';
+        self::$database = 'elopePHP';
         self::connect();
     }
 
