@@ -25,16 +25,4 @@ class View {
 	public function __construct() {
 		$this->className = get_class($this);
 	}
-		
-	/**
-	 * renderTable Method
-     * 
-	 * @access public
-	 * @since  1.0.0
-	 */
-    public function renderTable($objectArray) {
-        foreach($objectArray as $object) {
-			
-		}
-    }
 }
