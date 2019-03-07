@@ -20,14 +20,14 @@ foreach($students as $student) {
 }
 
 //You can also access a specific user
-$student = $students->getRecord(1);
+$student = $studentObject->getRecord(1);
 echo $student->ID.'<br/>';
 echo $student->firstname.'<br/>';
 echo $student->lastname.'<br/>';
 ```
 
 ### Views
-Create your own customizable view classes by simply extending the parent **view** class. An example is shown below:
+Create your own customizable view classes by simply extending the parent **view** class. The parent view class already comes with predefined getHeader() & getFooter() methods for the header.php and footer.php template files respectively. An example is shown below:
 ```
 //Instantiate View
 class StudentView extends View {
@@ -47,7 +47,7 @@ class StudentView extends View {
 }
 ```
 
-In your template file, the **$this->students** can be further accessed and print further, like so:
+In your template file **www-templates/student/index.php**, the **$this->students** can be further accessed and print further, like so:
 ```
 <section class="text-center" style="padding: 3em 0;">
     <div class="container">
