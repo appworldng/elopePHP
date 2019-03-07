@@ -16,5 +16,3 @@
  //This is a sample template file, the parent domain (www-templates) houses all your HTML templates seen in your various views...
 
  ?>
-
- <h1>Sample Template</h1>
