@@ -1,0 +1,37 @@
+@font-face {
+  font-family: 'Geomanist';
+  src: url('Geomanist-Light.svg#Geomanist-Light') format('svg'),
+       url('Geomanist-Light.ttf') format('truetype'),
+       url('Geomanist-Light.woff') format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geomanist';
+  src: url('hinted-Geomanist-Light.eot');
+  src: url('hinted-Geomanist-Light.eot?#iefix') format('embedded-opentype'),
+       url('hinted-Geomanist-Light.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+
+@font-face {
+  font-family: 'Geomanist';
+  src: url('Geomanist-Regular.svg#Geomanist-Regular') format('svg'),
+       url('Geomanist-Regular.ttf') format('truetype'),
+       url('Geomanist-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Geomanist';
+  src: url('hinted-Geomanist-Regular.eot');
+  src: url('hinted-Geomanist-Regular.eot?#iefix') format('embedded-opentype'),
+       url('hinted-Geomanist-Regular.woff2') format('woff2');
+  font-weight: 400;
+  font-style: normal;
+}
+
