@@ -1,14 +1,13 @@
 <?php
 
 require_once('config/database.php');
-require_once('controllers/controller.php');
-require_once('models/model.php');
-require_once('views/view.php');
+require_once('models/ElopeModel.php');
+require_once('controllers/ElopeController.php');
+require_once('views/ElopeView.php');
 
-require_once('controllers/StudentController.php');
-require_once('views/StudentView.php');
-
-$controller = isset($_GET['controller']) ? $_GET['controller'] : 'default';
-echo $controller;
+$controller = isset($_GET['controller']) ? $_GET['controller'] : 'home';
+require_once('models/'.ucwords($controller).'Model.php');
+require_once('views/'.ucwords($controller).'View.php');
+require_once('controllers/'.ucwords($controller).'Controller.php');
 
 ?>
