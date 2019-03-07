@@ -47,7 +47,7 @@ class StudentView extends View {
 }
 ```
 
-In your template file **www-templates/student/index.php**, the **$this->students** can be further accessed and print further, like so:
+In your template file **www-templates/student/index.php**, the **$this->students** can be further accessed and printed like so:
 ```
 <section class="text-center" style="padding: 3em 0;">
     <div class="container">
@@ -76,7 +76,7 @@ In your template file **www-templates/student/index.php**, the **$this->students
 ### Controllers
 For controllers, you can simply inherit the parent Controller class and start specifying appropriate actions to determine the messages passed to the models and subsequent actions.
 ```
-class StudentModel extends Model {
+class StudentController extends Controller {
 
 }
 ```
